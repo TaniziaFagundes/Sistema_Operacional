@@ -14,7 +14,7 @@ int main(int argc, char *argv[]){
         printf("hello, Sou o filho (pid:%d)\n", (int) getpid());
         char *myargs[3];
         myargs[0] = strdup("ls");   // programa: "wc"
-        myargs[1] = strdup("-l"); // argumento: nome do arquivo
+        myargs[1] = strdup("-l");   // argumento: nome do arquivo
         myargs[2] = NULL;           // fim do vetor
         execvp(myargs[0], myargs);  // roda wc
         printf("Isso nao deve ser imprimido");

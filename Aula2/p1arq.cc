@@ -9,7 +9,7 @@ main(int argc, char *argv[])
 {
 	ofstream arq("saida.txt");
 	printf("hello world (pid:%d)\n", (int) getpid());
-	int rc = fork();
+	int rc = fork(); 
 	if (rc < 0) {
 	// fork falhou; saia do programa
 		fprintf(stderr, "Erro no fork\n");
