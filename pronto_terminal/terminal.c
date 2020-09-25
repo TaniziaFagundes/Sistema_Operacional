@@ -40,15 +40,20 @@ int main(int argc, char *argv[]){
             fprintf(stderr, "fork falhou\n");
             exit(1);
         }else if (rc == 0) { // filho - todos os recursos do processo filho aqui
-            if(strcmp(palavra[0],"ls") == 0){
+            if(strcmp(palavra[0],"ls") == 0){         //ls ok
                 execvp(strdup(palavra[0]),palavra);
+            }
+            if(strcmp(palavra[0],"pwd") == 0){        //pwd ok
+                execvp(strdup(palavra[0]),palavra);
+            }
+            if(strcmp(palavra[0],"cd") == 0){
+                
             }
 
         }else{// Pai vem por aqui
             int wc = wait(NULL);
             printf("\n hello, sou o pai de %d (wc:%d) (pid:%d)\n",
             rc, wc, (int) getpid());
-
         }
         return 0;
     }
